@@ -1,6 +1,5 @@
 <?php
 include 'db.php';
-
 $connect = mysqli_connect($host,$user,$password,$database)
         or die ("Couldn't connect to server.");
         
@@ -14,7 +13,6 @@ $connect = mysqli_connect($host,$user,$password,$database)
             echo "<a href='views/details.php'><p id='stylists'>$fname $lname</p></a>";
             echo "</br>";
         }
-        
-            
+    
     
 ?>
