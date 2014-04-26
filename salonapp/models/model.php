@@ -2,7 +2,7 @@
 include 'db.php';
 class model{
 
-public function getStylists(){
+function getStylists(){
     $connect = mysqli_connect($host,$user,$password,$database)
         or die ("Couldn't connect to server.");
         
@@ -18,3 +18,4 @@ public function getStylists(){
 
 }
 }
+?>
