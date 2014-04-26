@@ -9,7 +9,7 @@ $stylists = new model();
 
 
 
-$view->show('header');
+$view->show('header.inc');
 
 if(!empty($_GET["action"])){
 	if($_GET["action"]=="stylist"){
@@ -19,13 +19,13 @@ if(!empty($_GET["action"])){
 		
 	}if($_GET["action"]=="client"){
 		
-		$view->show('clients');
+		$view->show('clients.inc');
 	}
 	
 }else{
-	$view->show('body');
+	$view->show('body.inc');
 }
 
-$view->show('footer');
+$view->show('footer.inc');
 
 ?>
