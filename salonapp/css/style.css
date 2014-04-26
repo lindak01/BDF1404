@@ -1,5 +1,5 @@
 body {
-	margin: 100px, 100px;
+	margin: 100px 50x;
 	padding: 0;
 	background: #000000;
 	font-family: Arial, Helvetica, sans-serif;
@@ -13,6 +13,21 @@ h1, h2, h3 {
 	font-weight: normal;
 	color: #9F0000;
 }
+
+h1{
+	font-family: 'Tangerine', 'cursive';
+	font-size: 72px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+#welcome {
+	
+	text-align: center;
+}
+
 
 #wrapper {
 	width: 960px;
@@ -58,13 +73,53 @@ nav a:hover {
 	color: #000000;
 }
 
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
 aside {
 	float: right;
 }
 
+/**************************** Main Page Links *****************************/
+
+#mplinks {
+	margin-top: 50px;
+	margin-left: 55px;
+}
+
+#mplinks li{
+	list-style-type: none;
+	display: inline;
+	margin-left: 100px;
+	margin-right: 150px;
+}
+
+#mplinks a {
+	text-decoration: none;
+	font-size: 28px;
+	color: #9F0000;
+}
+
+#mplinks a:hover {
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+
+#mplinks a:visited {
+	color: #c93f53;
+}
+
+
+
+
 #stylists {
 	float: left;
 	clear: both;
-	margin-top: 200px;
-	margin-left: 35px;
+	margin-top: 100px;
+	
 }

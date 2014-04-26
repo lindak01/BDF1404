@@ -1,6 +1,6 @@
 <?php
 
-class views {
+class view{
     
     public function show($template, $data = array()) {
         $templatePath = "views/${template}.inc";
