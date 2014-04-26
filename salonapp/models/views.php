@@ -7,7 +7,7 @@ class view{
     }
     
     public function show($template, $data = array()) {
-        $templatePath = "views/${template}";
+        $templatePath = "views/${template}.inc";
         if (file_exists($templatePath)) {
             include $templatePath;
         }

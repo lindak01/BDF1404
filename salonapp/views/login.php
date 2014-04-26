@@ -1,48 +1,35 @@
 <?php
 session_start();
-switch (@$_POST['Button']){
-    case "Log in":
-        include('db.php');
-        $connect = mysqli_connect($host,$user,$password,$database)
-        or die ("Couldn't connect to server.");
+$cxn = mysqli_connect($host,$user,$password,$database)
+        or die("Couldn't connect to server.");
         
-        $sql = "SELECT username FROM stylist
-                WHERE username= '$_POST[username]'";
-        $result = mysqli_query($connect, $sql)
-                or die ("Query died: username");
-        $num = mysqli_num_rows($result);
-        if ($num >0)
-        {
-            $sql = "SELECT username FROM stylist
-                    WHERE username= '$_POST[username]'
-                    AND password=md5 ('$_POST[password]')";
-            $result2 = mysqli_query($connect, $sql)
-                    or die("Query died: password");
-            $num2 = mysqli_num_rows($result2);
-        if ($num2 > 0)
-        {
+    $sql = "SELECT username FROM stylist WHERE username='$_POST[fusername]'";
+    $result = mysqli_query($cxn,$sql)
+        or die("Query died: fusername");
+    $num = mysqli_num_rows($result);
+    if($num > 0) {
+        $sql = "SELECT username FROM stylist WHERE username='$_POST[fusername]'
+                AND password=md5('$_POST[fpassword]')";
+        $result2 = mysqli_query($cxn,$sql)
+                or die("Query died: fpassword");
+        $num2 = mysqli_num_rows($result2);
+        if($num2 > 0) {
             $_SESSION['auth']="yes";
-            $_SESSION['logname'] = $_POST['username'];
-            $sql = "INSERT INTO Login (loginName,loginTime)
+            $_SESSION['logname'] = $_POST['fusername'];
+            $sql = "INSERT INTO Login (loginName, loginTime)
                     VALUES ('$_SESSION[logname]',NOW())";
-            $result =  mysqli_query($connect,$sql)
-                        or die("Query died: insert");
-            header("Location: views/details.php");
-                
-        }
+            $result = mysqli_query($cxn, $sql)
+                    or die("Query died: insert");
+    }
         else{
-            $message_1="The User Name, '$_POST[username]' exists, but the password does not match. Please try again.";
-            $username=strip_tags(trim($_POST['username']));
-            include('body.inc');
-        }
+            $message_1="The Login Name, '$_POST[fusername]' exists, but the password is incorrect.";
+            $fusername=strip_tags(trim($_POST['fusername']));
+            include 'loginform.inc';
+    }
     }
     else{
-        $message_1 = "The User Name you entered does not exist. Please try again.";
-        include('body.inc');
-    }
-    break;
-    
-    default:
-            include('body.inc');
-}
+        $message_1="The User Name you entered does not exist. Pleast try again.";
+        include 'loginform.inc';
+    } 
+
 ?>
