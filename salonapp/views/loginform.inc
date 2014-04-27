@@ -30,9 +30,10 @@ foreach($fields_1 as $field => $value){
                     <input id='$field' name='$field' type='$type' value='".@$$field."' size='20' maxlength='50 /></div>\n";                   
 }
 ?>
-<input type="submit" name="Button" style='margin-left: 45%; margin-bottom: .5em' value="Log in" />
+    <input type="submit" name="Button" style='margin-left: 45%; margin-bottom: .5em' value="Log in" />
     </fieldset>
     </form>
+    
 <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
     <fieldset><legend>Registration Form</legend>
     
@@ -73,7 +74,7 @@ foreach($fields_1 as $field => $value){
                 $type = "text";
             echo "<div id='field'>
                     <label for='$field'>$value</label>
-                    <input id='$field' name='$field' type='$type' value'".@$$field."'size='40' maxlength='65' /></div>\n";
+                    <input id='$field' name='$field' type='$type' value='".@$$field."'size='40' maxlength='65' /></div>\n";
         }
     }
 ?>

@@ -16,6 +16,11 @@ if(!empty($_GET["action"])){
 	if($_GET["action"]=="stylist"){
 		
 		$view->show('stylists');
+		if(!empty($_GET["action"])){
+			if($_GET["action"]=="add"){
+				$view->show('addform');
+			}
+		}
 		
 	}if($_GET["action"]=="client"){
 		
