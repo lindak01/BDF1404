@@ -1,4 +1,5 @@
 <?php
+
 $labels = array("fname" => "First Name",
                 "lname" => "Last Name",
                 "username" => "User Name",
