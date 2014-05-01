@@ -13,7 +13,7 @@ class Stylists_model extends CI_Model {
             return $query->result_array();
         }
         
-        $query = $this->db->get_where('stylists', array('userId' => $userId));
+        $query = $this->db->get_where('stylistInfo', array('userId' => $userId));
         return $query->row_array();
     }
     

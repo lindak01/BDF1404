@@ -1,3 +1,4 @@
+<h1>Please select a stylist for more details!</h1>
 <?php foreach ($stylist as $stylist_detail): ?>
 
     <h2><?php echo $stylist_detail['fname'] ?> <?php echo $stylist_detail['lname'] ?></h2>

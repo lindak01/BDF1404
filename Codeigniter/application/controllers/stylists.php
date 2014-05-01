@@ -20,14 +20,15 @@ class Stylists extends CI_Controller {
     
     public function view($userId){
         
-        $data['stylist'] = $this->stylists_model->get_stylists($userId);
+        $data['stylist_detail'] = $this->stylists_model->get_stylists($userId);
         
         if (empty($data['stylist_detail'])){
             
             show_404();
         }
         
-        $data['fname'] = $data['stylist_detail']['fname'];
+        $data['stylistEmail'] = $data['stylist_detail']['stylistEmail'];
+        $data['stylistPhone'] = $data['stylist_detail']['stylistPhone'];
         
         $this->load->view('templates/header', $data);
         $this->load->view('stylists/view', $data);
