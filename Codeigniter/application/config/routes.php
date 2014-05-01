@@ -38,6 +38,7 @@
 |
 */
 
+$route['stylist/create'] = 'news/create';
 $route['stylist/(:any)'] = 'stylist/view/$1';
 $route['stylist'] = 'stylists';
 $route['default_controller'] = "pages/view";

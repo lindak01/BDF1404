@@ -1,0 +1,1 @@
+<p>You have created a new stylist!</p>
