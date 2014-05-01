@@ -5,7 +5,7 @@ class Stylists_model extends CI_Model {
         $this->load->database();
     }
     
-    public function get_stylists($id = FALSE)
+    public function get_stylists($userId = FALSE)
     {
         if ($userId === FALSE)
         {
@@ -16,4 +16,6 @@ class Stylists_model extends CI_Model {
         $query = $this->db->get_where('stylists', array('userId' => $userId));
         return $query->row_array();
     }
+    
+    
 }

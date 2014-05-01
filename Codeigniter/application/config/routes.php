@@ -38,6 +38,8 @@
 |
 */
 
+$route['stylist/(:any)'] = 'stylist/view/$1';
+$route['stylist'] = 'stylists';
 $route['default_controller'] = "pages/view";
 $route['(:any)'] = 'pages/view/$1';
 $route['404_override'] = '';
